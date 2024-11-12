@@ -145,7 +145,6 @@ get_sdks() {
 		update "SDKs appear to already be installed."
 	else
 		update "SDKs do not appear to be installed. Installing now..."
-		alias curl="curl -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}'"
 		$THEOS/bin/install-sdk latest  # && $THEOS/bin/install-sdk latest-tv
 		if ! [[ -z $(ls -A "$THEOS/sdks/" | grep sdk) ]]; then
 			update "SDKs successfully installed!"
